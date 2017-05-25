@@ -1,6 +1,3 @@
-dataset <- readRDS("NatHealth2011.rds")
-
-
 ## Regression with binary outcomes
 ## ═════════════════════════════════
 
@@ -27,7 +24,7 @@ dataset <- readRDS("NatHealth2011.rds")
 
 ##   Load the National Health Interview Survey data:
 
-NH11 <- readRDS("dataSets/NatHealth2011.rds")
+NH11 <- readRDS("NatHealth2011.rds")
 labs <- attributes(NH11)$labels
 
 ##   [CDC website] http://www.cdc.gov/nchs/nhis.htm
@@ -92,7 +89,7 @@ cbind(predDat, predict(hyp.out, type = "response",
 
 ##   Instead of doing all this ourselves, we can use the effects package to
 ##   compute quantities of interest for us (cf. the Zelig package).
-
+#install.packages('effects')
 library(effects)
 plot(allEffects(hyp.out))
 
@@ -109,3 +106,9 @@ plot(allEffects(hyp.out))
 ##   Note that the data is not perfectly clean and ready to be modeled. You
 ##   will need to clean up at least some of the variables before fitting
 ##   the model.
+
+
+
+
+
+
